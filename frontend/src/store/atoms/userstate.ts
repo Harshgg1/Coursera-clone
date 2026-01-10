@@ -1,6 +1,11 @@
 import { atom } from "recoil";
 
-export const userstate = atom({
+export type UserState = {
+    isLoading: Boolean,
+    userEmail: string | null;
+}
+
+export const userstate = atom<UserState>({
     key: 'userstate',
     default: {
         isLoading: true,

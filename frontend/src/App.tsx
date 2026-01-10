@@ -19,7 +19,7 @@ function App() {
                         <InitUser />
                         <Routes>
                             <Route path={"/addcourse"} element={<Addcourse />} />
-                            <Route path={"/course/:courseId"} element={<Course />} />
+                            {/* <Route path={"/course/:courseId"} element={<Course />} /> */}
                             <Route path={"/courses"} element={<Courses />} />
                             <Route path={"/signin"} element={<Signin />} />
                             <Route path={"/signup"} element={<Signup />} />

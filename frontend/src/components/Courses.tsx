@@ -2,14 +2,27 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
+type Course = {
+      _id: string;
+      title: string;
+      description: string;
+      imageLink: string;
+      price: number;
+}
+
+type CourseResponse = {
+  courses: Course[];
+}
+
 function Courses() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState<Course[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchCourses() {
       try {
-        const response = await axios.get(
+        const response = await axios.get<CourseResponse>(
           "http://localhost:3000/admin/courses",
           {
             headers: {

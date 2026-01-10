@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { userEmailState } from "../store/selectors/userEmail";
-import { isUserLoading } from "../store/selectors/isUserLoading";
+import { userEmailState } from "../store/Selectors/userEmail";
+import { isUserLoading } from "../store/Selectors/isUserLoading";
 import { counterState } from "../store/atoms/counterState";
 
 function Landing() {
   const navigate = useNavigate();
   const userEmail = useRecoilValue(userEmailState);
   const userLoading = useRecoilValue(isUserLoading);
-  const [value, changeVal] = useRecoilState(counterState)
+  // const [value, changeVal] = useRecoilState(counterState)
 
   return (
     <div>
